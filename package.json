@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@inrupt/solid-client": "^1.23.3",
+    "@inrupt/solid-client-authn-browser": "^1.12.2",
+    "@inrupt/vocab-common-rdf": "^1.0.5"
+  },
+  "type" : "module"
+}
