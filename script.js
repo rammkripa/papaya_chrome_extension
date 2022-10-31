@@ -66,7 +66,7 @@ async function accessData() {
     PersonPapayaSolidDataset,
     {fetch: fetch}// fetch function from authenticated session
   );
-  document.getElementById("checkpoint7").innerHTML = 'save dataset passing';
+  document.getElementById("checkpoint7").innerHTML = 'save dataset passing?';
   }
   catch(e) {
     document.getElementById("checkpoint7").innerHTML = e.stack;
