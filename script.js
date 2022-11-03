@@ -20,14 +20,23 @@ async function login1() {
   await solidClientAuthentication.handleIncomingRedirect();
   document.getElementById("checkpoint2").innerHTML='handle incoming redirect passing';
   // 2. Start the Login Process if not already logged in.
+  try{
   if (!solidClientAuthentication.getDefaultSession().info.isLoggedIn) {
     await solidClientAuthentication.login({
       oidcIssuer: "https://login.inrupt.com",
+      //oidcIssuer:"http://localhost:3004",
       redirectUrl: window.location.href,
       clientName: "Papaya Chrome Extension"
     });
   }
   document.getElementById("checkpoint3").innerHTML='logged in';
+  }
+  catch(e) {
+    document.getElementById("checkpoint3").innerHTML=e.stack;
+  }
+
+  
+  
   const script2 = document.createElement('script');
   script2.type = 'text/javascript';
   script2.src = 'https://cdn.jsdelivr.net/gh/rammkripa/solid-client-js/solid-client-bundle.js';
